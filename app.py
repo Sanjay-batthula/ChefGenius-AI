@@ -60,7 +60,7 @@ with tabs[0]:
         chef_style = st.radio("Chef Personality", ["Professional", "Funny", "Gordon Ramsay", "Chill Grandma"], index=0)
         substitute_request = st.checkbox("Suggest Ingredient Substitutes")
 
-    if st.button("✨ Generate Fusion Recipe"):
+    if st.button("✨ Generate Recipe"):
         style = ", ".join(cuisine_style)
         diet = ", ".join(dietary_restrictions)
         tone_prompt = f"Respond in a {chef_style.lower()} tone."
@@ -145,8 +145,8 @@ with tabs[5]:
 # --- TAB 7: Surprise Me ---
 with tabs[6]:
     st.subheader("🎲 Feeling Lucky?")
-    if st.button("🎉 Surprise Me with a Random Fusion Recipe"):
-        surprise_prompt = "Generate a random, wacky but tasty fusion recipe. Include ingredients and steps."
+    if st.button("🎉 Surprise Me with a Random Recipe"):
+        surprise_prompt = "Generate a random, wacky but tasty recipe. Include ingredients and steps."
         random_recipe = call_upstage(surprise_prompt)
         st.markdown(random_recipe)
         st.session_state.generated_recipe = random_recipe
